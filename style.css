@@ -1,8 +1,16 @@
+@font-face {
+    font-family: 'SF Compact Display Medium';
+    font-style: normal;
+    font-weight: normal;
+    src: local('SF Compact Display Medium'), url('sf-compact-display-medium-58646eb43a785.woff') format('woff');
+}
+
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: consolas;
+    font-family: 'Inconsolata', monospace;
     scroll-behavior: smooth;
 }
 
