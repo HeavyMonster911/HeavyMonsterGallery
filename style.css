@@ -124,6 +124,34 @@ body {
 }
 
 
+.shareText {
+    line-height: 0px;
+    padding-bottom: 30px;
+}
+.shareLinks {
+    display: flex;
+}
+.shareLinks a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 3em;
+    transition: 0.5s;
+}
+.shareLinks a:nth-child(2),
+.shareLinks a:nth-child(3) {
+    padding-left: 20px;
+}
+.shareLinks a:nth-child(3) {
+    padding-right: 20px;
+}
+.shareLinks a:hover {
+    opacity: 0.5;
+}
+.shareLinks a i {
+    color: #fff;
+}
+
+
 
 .gallerySection {
     position: relative;
@@ -180,6 +208,9 @@ body {
     }
     .galleryInfo p {
         text-align: center;
+    }
+    .galleryInfo .shareText {
+        text-align: start;
     }
     .galleryBox__section {
         min-width: 100%;
