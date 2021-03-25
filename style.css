@@ -207,7 +207,7 @@ body {
         font-size: 2em;
     }
     .galleryInfo p {
-        text-align: center;
+        text-align:justify;
     }
     .galleryInfo .shareText {
         text-align: start;
