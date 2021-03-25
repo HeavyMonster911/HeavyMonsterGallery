@@ -190,6 +190,5 @@ body {
     }
     .galleryBox__section:hover {
         width: 100%;
-        height: 55vh;
     }
 }
