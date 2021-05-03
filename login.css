@@ -1,0 +1,157 @@
+.userStart {
+    position: relative;
+    width: 800px;
+    height: 500px;
+    background: #fff;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+    overflow: hidden;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+.mainLogin {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: transparent;
+    backdrop-filter: blur(20px);
+    z-index: 100;
+    position: fixed;
+    display: none;
+}
+main .userStart i {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 25px;
+    color: #111;
+    z-index: 1000;
+    cursor: pointer;
+}
+main .userStart .user {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+main .userStart .user .imgBx {
+    position: relative;
+    width: 50%;
+    height: 100%;
+}
+main .userStart .user .imgBx img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+main .userStart .user .formBx {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    transition: 0.5s;
+}
+main .userStart .user .formBx h2 {
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 10px;
+    color: #555;
+}
+main .userStart .user .formBx input {
+    width: 100%;
+    padding: 10px;
+    background: #f5f5f5;
+    color: #333;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    margin-bottom: 10px;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+main .userStart .user .formBx input[type="submit"] {
+    max-width: 100px;
+    background: #333;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+}
+main .userStart .user .formBx .singup {
+    position: relative;
+    margin-top: 20px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: #555;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+main .userStart .user .formBx .singup a {
+    font-weight: 600;
+    text-decoration: none;
+    color: #333;
+}
+main .userStart .singupBx {
+    pointer-events: none;
+}
+main .userStart.active .singupBx {
+    pointer-events: initial;
+}
+main .userStart .singupBx .formBx {
+    top: 100%;
+}
+main .userStart.active .singupBx .formBx {
+    top: 0;
+}
+main .userStart .singupBx .imgBx {
+    top: -100%;
+    transition: 0.5s;
+}
+main .userStart.active .singupBx .imgBx {
+    top: 0;
+}
+main .userStart .singIn .formBx {
+    top: 0;
+}
+main .userStart.active .singIn .formBx {
+    top: 100%;
+}
+main .userStart .singIn .imgBx {
+    top: 0;
+    transition: 0.5s;
+}
+main .userStart.active .singIn .imgBx {
+    top: -100%;
+}
+.activelist {
+    display: block;
+}
+
+@media (max-width: 850px) {
+    .userStart {
+        width: 80%;
+        height: 80%;
+    }
+    main .userStart .user .imgBx {
+        display: none;
+    }
+    main .userStart .user .formBx {
+        width: 100%;
+    }
+}
