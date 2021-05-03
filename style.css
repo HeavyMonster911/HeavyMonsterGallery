@@ -70,7 +70,14 @@ body {
 .header a:hover {
     opacity: 0.5;
 }
-
+.header .loginForm {
+    font-size: 2em;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    z-index: 10;
+    font-weight: 700;
+}
 
 
 .main {
@@ -200,6 +207,68 @@ body {
     border: 5px solid #111;
     border-radius: 5px;
 }
+
+
+
+.content {
+    position: relative;
+    -webkit-box-reflect: below -10px linear-gradient(transparent, #0001);
+}
+.content h2::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: #fff;
+    animation: blink 0.8s steps(3) infinite;
+}
+@keyframes blink {
+    0%, 75% {
+        opacity: 1;
+    }
+    76%, 100% {
+        opacity: 0;
+    }
+}
+.content h2 {
+    position: relative;
+    color: #fff;
+    font-size: 4em;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    overflow: hidden;
+    animation: action 12s steps(16) infinite;
+}
+@keyframes action {
+    0%, 90%, 100% {
+        width: 0;
+    }
+    30%, 60% {
+        width: 650px;
+    }
+}
+
+
+#arrowTop {
+    height: 20px;
+    width: 25px;
+    font-size: 50px;
+    color: #fff;
+    position: fixed;
+    bottom: 5%;
+    right: 25px;
+    cursor: pointer;
+    transition: 0.5s; 
+    outline: none;
+}
+  #arrowTop::before {
+    content: '▲';
+}
+
+
+
 @media (max-width: 600px) {
     .header::before {
         display: none;
@@ -236,5 +305,25 @@ body {
     }
     .galleryBox__section:hover {
         width: 100%;
+    }
+    .content h2 {
+        font-size: 1.5em;
+        animation: action 12s steps(17) infinite;
+    }
+    @keyframes action {
+        0%, 90%, 100% {
+            width: 0;
+        }
+        30%, 60% {
+            width: 300px;
+        }
+    }
+    #arrowTop {
+        font-size: 30px;
+        right: 5px;
+        bottom: 15px;
+    }
+    .header .loginForm {
+        font-size: 1.5em;
     }
 }
