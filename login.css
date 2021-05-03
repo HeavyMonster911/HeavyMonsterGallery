@@ -88,6 +88,8 @@ main .userStart .user .formBx input {
     letter-spacing: 1px;
 }
 main .userStart .user .formBx input[type="submit"] {
+    -webkit-appearance: none;
+    appearance: none;
     max-width: 100px;
     background: #333;
     color: #fff;
