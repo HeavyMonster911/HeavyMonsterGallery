@@ -7,6 +7,7 @@
     <link href="assets/logo.png" rel="shortcut icon">
     <title>Gallery</title>
     <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="login.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
 <body>
@@ -15,6 +16,8 @@
         <div class="logo">
             <a href="#">Brand.</a>
         </div>
+        <div class="loginForm">
+            LogIn
         </div>
     </header>
 
@@ -23,10 +26,55 @@
             <img src="https://dnepr.info/wp-content/uploads/2020/03/les.jpg" class="fixedBg">
             <img src="https://wallpaperaccess.com/full/1687008.jpg" class="fixedBg">
         </div>
+        <section class="mainLogin">
+            <div class="userStart">
+                <i class="fa fa-times" aria-hidden="true"></i>
+                <div class="user singIn">
+                    <div class="imgBx">
+                        <img src="assets/logIn.jpg">
+                    </div>
+                    <div class="formBx">
+                        <form>
+                            <h2>
+                                Sing In
+                            </h2>
+                            <input type="text" placeholder="Username">
+                            <input type="password" placeholder="Password">
+                            <input type="submit" value="Login">
+                            <p class="singup">
+                                don't have an account? <a href="#" onclick="toggleForm();">Sing up</a>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+                <div class="user singupBx">
+                    <div class="imgBx">
+                        <img src="assets/singIn.jpg">
+                    </div>
+                    <div class="formBx">
+                        <form>
+                            <h2>
+                                Create an account
+                            </h2>
+                            <input type="text" placeholder="Username">
+                            <input type="text" placeholder="Email Addreass">
+                            <input type="password" placeholder="Create Password">
+                            <input type="password" placeholder="Confirm Password">
+                            <input type="submit" value="Sing Up">
+                            <p class="singup">
+                                Already have an account? <a href="#" onclick="toggleForm();">Sing in</a>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
         <section class="galleryInfo">
-                <h1 id="galleryStory">
-                    Brand.Gallery
-                </h1>
+                <div class="content">
+                    <h2>
+                        Brand.Gallery...
+                    </h2>
+                </div>
                 <h2>
                     Share Links
                 </h2>
@@ -120,6 +168,9 @@
                     </div>
                 </div>
         </section>
+        <div id="arrowTop" hidden></div>
+        <script src="script.js"></script>
+        <script src="login.js"></script>
     </main>
 </body>
 </html>
