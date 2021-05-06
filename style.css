@@ -12,10 +12,10 @@
     box-sizing: border-box;
     font-family: 'Inconsolata', monospace;
     scroll-behavior: smooth;
+    transition: 0.5s;
 }
 
 body {
-    display: flex;
     width: 100%;
     background: #111;
     user-select: none;
@@ -27,27 +27,19 @@ body {
 
 
 .header {
+    position: relative;
     display: flex;
     position: fixed;
     justify-content: space-between;
     width: 100%;
     height: 10%;
     align-items: center;
-    background: #fff;
+    background: #111;
     padding: 0 20px;
     transition: 0.5s;
-    box-shadow: 0 0 0 2px #111;
+    border-bottom: 3px solid #000;
     z-index: 10;
-}
-.header::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 10%;
-    background: linear-gradient(to top, #111, transparent);
-    opacity: 0.7;
+    opacity: 0.95;
 }
 .header img {
     position: absolute;
@@ -59,7 +51,7 @@ body {
     z-index: -1;
 }
 .header a {
-    font-size: 2em;
+    font-size: 2.5em;
     text-decoration: none;
     color: #111;
     font-weight: 700;
@@ -70,21 +62,153 @@ body {
 .header a:hover {
     opacity: 0.5;
 }
-.header .loginForm {
+.logo {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.logo__img {
+    width: 50px;
+    height: 50px;
+    position: relative;
+}
+.menu {
+    position: relative;
+    width: 40px;
+    height: 50px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+}
+.menuBar {
+    transition: 0.5s;
+    cursor: pointer;
+    z-index: 1;
+    width: 100%;
+    border-radius: 2px;
+    height: 8%;
+    background: #000;
+    position: absolute;
+}
+.menuBar::before {
+    content: "";
+    position: absolute;
+    border-radius: 2px;
+    top: -10px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    transition: 0.5s;
+}
+.menuBar::after {
+    content: "";
+    position: absolute;
+    border-radius: 2px;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    transition: 0.5s;
+}
+.menuBar.activeBtn {
+    display: none;
+    transition: 0.5s;
+}
+.closeBar {
+    position: relative;
+    width: 100%;
+    height: 5%;
+    z-index: 1;
+    cursor: pointer;
+    transition: 0.5s;
+    display: none;
+}
+.closeBar::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: #000;
+    top: 0;
+    left: 0;
+    transform: rotate(45deg);
+    transition: 0.5s;
+}
+.closeBar::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: #000;
+    top: 0;
+    left: 0;
+    transform: rotate(135deg);
+    transition: 0.5s;
+}
+.closeBar.disableBtn {
+    display: block;
+}
+.navigation {
+    position: absolute;
+    bottom: -50%;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    transition: 0.5s;
+    transform: translateX(100%);
+}
+.navigation.active {
+    transform: translateX(0);
+}
+.navigation a {
+    font-size: 1.5em;
+    color: #fff;
+    letter-spacing: 10px;
+}
+.logo__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: animateLogo 8s steps(4) infinite;
+}
+@keyframes animateLogo {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.loginForm {
     font-size: 2em;
     font-weight: 700;
     text-transform: uppercase;
     cursor: pointer;
     z-index: 10;
     font-weight: 700;
+    color: #fff;
 }
 
 
 .main {
     display: flex;
     width: 100%;
-    height: 100vh;
-    background: #fff;
+    height: 100%;
+    background: #111;
     justify-content: center;
 }
 .fixedDiv {
@@ -96,6 +220,7 @@ body {
     background: #000;
     filter: invert(0);
     z-index: 0;
+    opacity: 0.9;
 }
 .fixedDiv .fixedBg {
     position: absolute;
@@ -105,7 +230,7 @@ body {
     height: 100%;
     object-fit: cover;
     filter: grayscale(100%);
-    opacity: 0.8;
+    opacity: 1;
 }
 .fixedDiv .fixedBg:nth-child(2) {
     mix-blend-mode: multiply;
@@ -189,7 +314,7 @@ body {
     width: 30%;
     height: 80vh;
     margin-bottom: 50px;
-    opacity: 0.6;
+    opacity: 0.7;
     transition: 0.5s;
     overflow: hidden;
     filter: grayscale(100%);
@@ -268,16 +393,89 @@ body {
 }
 
 
+.footer {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    background: #000;
+    align-items: center;
+    border-top: 10px solid #000;
+    margin-top: 50px;
+    overflow: hidden;
+}
+.footer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.1;
+    z-index: 0;
+}
+.footer__container {
+    position: absolute;
+    top: 0;
+    left: 35%;
+    height: 100%;
+    width: 50%;
+    background: #000;
+    padding: 10px 20px;
+}
+.footer__container::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid #000;
+    top: 0;
+    left: -50px;
+}
+.footer__container::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 100px solid #000;
+    top: 0;
+    right: -50px;
+}
+.footer__container p {
+    color: #fff;
+    opacity: 0.2;
+    font-size: 0.75em;
+    text-align: center;
+}
+
 
 @media (max-width: 600px) {
+    .header {
+        opacity: 1;
+    }
     .header::before {
         display: none;
         visibility: hidden;
         opacity: 0;
     }
+    .header a {
+        font-size: 2em;
+    }
     .header .nav {
         visibility: hidden;
         opacity: 0;
+    }
+    .navigation a {
+        font-size: 1.25em;
+        letter-spacing: 2px;
+    }
+    .logo__img img {
+        animation: none;
+    }
+    .fixedDiv {
+        opacity: 0.7;
     }
     .galleryInfo {
         margin-top: 25%;
