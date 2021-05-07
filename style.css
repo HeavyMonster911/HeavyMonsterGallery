@@ -456,6 +456,9 @@ body {
         opacity: 1;
         height: 80px;
     }
+    .navigation {
+        height: 40px;
+    }
     .header::before {
         display: none;
         visibility: hidden;
