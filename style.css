@@ -387,6 +387,7 @@ body {
     cursor: pointer;
     transition: 0.5s; 
     outline: none;
+    z-index: 10;
 }
   #arrowTop::before {
     content: '▲';
