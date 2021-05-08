@@ -409,7 +409,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.1;
+    opacity: 0.2;
     z-index: 0;
 }
 .footer__container {
@@ -527,5 +527,15 @@ body {
     }
     .header .loginForm {
         font-size: 1.5em;
+    }
+    .footer {
+        height: 80px;
+    }
+    .footer img {
+        opacity: 0.8;
+    }
+    .footer__container p {
+        opacity: 0.8;
+        font-size: 0.5em;
     }
 }
