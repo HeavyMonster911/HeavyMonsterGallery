@@ -347,6 +347,7 @@ body {
     margin: 10px 0;
     flex-direction: row-reverse;
     width: 100%;
+    border-radius: 0;
 }
 .rating input {
     position: relative;
@@ -359,7 +360,7 @@ body {
     -webkit-appearance: none;
     appearance: none;
     border: none;
-    border-radius: none;
+    border-radius: 0;
     overflow: hidden;
 }
 .rating input::before {
@@ -374,17 +375,19 @@ body {
     -webkit-appearance: none;
     appearance: none;
     border: none;
-    border-radius: none;
+    border-radius: 0;
 }
 .rating input:nth-child(2n+1)::before {
     right: 4px;
     left: initial;
+    border-radius: 0;
 }
 .rating input:hover ~ input::before,
 .rating input:hover::before,
 .rating input:checked ~ input::before,
 .rating input:checked::before {
     color: #fff;
+    border-radius: 0;
 }
 
 
