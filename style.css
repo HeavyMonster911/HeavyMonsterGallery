@@ -321,7 +321,6 @@ body {
     margin-bottom: 50px;
     opacity: 0.7;
     transition: 0.5s;
-    overflow: hidden;
     filter: grayscale(100%);
 }
 .galleryBox__section:hover {
@@ -336,6 +335,50 @@ body {
     object-fit: cover;
     border: 5px solid #111;
     border-radius: 5px;
+}
+.rating {
+    position: absolute;
+    bottom: -55px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+    display: flex;
+    margin: 10px 0;
+    flex-direction: row-reverse;
+    width: 100%;
+}
+.rating input {
+    position: relative;
+    width: 20px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+    overflow: hidden;
+}
+.rating input::before {
+    content: '\f005';
+    position: absolute;
+    font-family: fontAwesome;
+    font-size: 35px;
+    position: absolute;
+    left: 4px;
+    color: #333;
+    transition: 0.5s;
+}
+.rating input:nth-child(2n+1)::before {
+    right: 4px;
+    left: initial;
+}
+.rating input:hover ~ input::before,
+.rating input:hover::before,
+.rating input:checked ~ input::before,
+.rating input:checked::before {
+    color: #fff;
 }
 
 
