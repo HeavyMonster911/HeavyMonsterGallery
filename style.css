@@ -358,6 +358,8 @@ body {
     cursor: pointer;
     -webkit-appearance: none;
     appearance: none;
+    border: none;
+    border-radius: none;
     overflow: hidden;
 }
 .rating input::before {
@@ -369,6 +371,10 @@ body {
     left: 4px;
     color: #333;
     transition: 0.5s;
+    -webkit-appearance: none;
+    appearance: none;
+    border: none;
+    border-radius: none;
 }
 .rating input:nth-child(2n+1)::before {
     right: 4px;
