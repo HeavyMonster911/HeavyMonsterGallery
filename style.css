@@ -348,6 +348,7 @@ body {
     flex-direction: row-reverse;
     width: 100%;
     border-radius: 0;
+    overflow: hidden;
 }
 .rating input {
     position: relative;
@@ -362,6 +363,7 @@ body {
     border: none;
     border-radius: 0;
     overflow: hidden;
+    transform: translateY(55px);
 }
 .rating input::before {
     content: '\f005';
@@ -388,6 +390,9 @@ body {
 .rating input:checked::before {
     color: #fff;
     border-radius: 0;
+}
+.galleryBox__section:hover .rating input {
+    transform: translateY(0);
 }
 
 
