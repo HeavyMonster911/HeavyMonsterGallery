@@ -317,6 +317,8 @@ body {
     max-width: 50%;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
     height: 80vh;
     margin-bottom: 50px;
     opacity: 0.7;
@@ -336,19 +338,103 @@ body {
     border: 5px solid #111;
     border-radius: 5px;
 }
-.rating {
-    position: absolute;
-    bottom: -55px;
+.info-box {
+    width: 100%;
+    height: 50px;
+    background: #000;
+    z-index: 1;
+}
+.active-menu {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: #000;
+    transition: 0.5s;
+    color: #fff;
+}
+.info-box .info-box__disabled {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    height: 100%;
+}
+.info-box__name {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    margin: auto 0;
+}
+.info-box .info-box__name {
+    align-items: center;
+
+}
+.active-menu .info-box__disabled {
+    align-items: flex-start;
+    transition: 0.5s;
+}
+.info-box .img-tag {
+    color: #fff;
+    font-size: 1.5em;
+    padding: 0 40px;
+}
+.active-menu .img-tag {
+    font-size: 3em;
+    padding: 10px;
+    text-decoration: underline;
+}
+.info-box .info-arrow {
+    color: #fff;
+    font-size: 2em;
+    transform: rotate(0deg);
+    margin: 0 40px;
+    cursor: pointer;
+}
+.info-box .arrow-active {
+    transform: rotate(180deg);
+    font-size: 3em;
+}
+.info-box .categories {
+    display: none;
+}
+.info-box .rating {
+    display: none;
+    transition: 0.5s;
+}
+.active-menu .rating {
+    z-index: 10000;
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: flex-start;
     position: relative;
-    display: flex;
-    margin: 10px 0;
     flex-direction: row-reverse;
     width: 100%;
+    transform: translateY(100%);
     border-radius: 0;
-    overflow: hidden;
+    transition: 0.5s;
+}
+.active-menu .categories {
+    display: flex;
+    width: 100%;
+    font-weight: bold;
+    justify-content: center;
+    height: 100%;
+    font-size: 2.25em;
+    flex-wrap: wrap;
+    padding: 0 10px;
+}
+.active-menu .categories-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+.active-menu .categories-info p {
+    font-size: 0.5em;
+    text-align: start;
 }
 .rating input {
     position: relative;
@@ -390,9 +476,6 @@ body {
 .rating input:checked::before {
     color: #fff;
     border-radius: 0;
-}
-.galleryBox__section:hover .rating input {
-    transform: translateY(0);
 }
 
 
