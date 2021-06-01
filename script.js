@@ -20,3 +20,13 @@ closeBar.onclick = function() {
   menuBar.classList.remove('activeBtn')
   navigation.classList.remove('active');
 }
+
+let infoActive = document.querySelectorAll('.info-box');
+
+for (let i = 0; i <= infoActive.length; i++) {
+  let infoArrow = document.querySelectorAll('.info-arrow');
+  infoArrow[i].onclick = function() {
+    infoArrow[i].classList.toggle('arrow-active');
+    infoActive[i].classList.toggle('active-menu');
+  }
+}
