@@ -343,6 +343,7 @@ body {
     height: 50px;
     background: #000;
     z-index: 1;
+    overflow: hidden;
 }
 .active-menu {
     width: 100%;
@@ -351,6 +352,7 @@ body {
     background: #000;
     transition: 0.5s;
     color: #fff;
+    overflow: hidden;
 }
 .info-box .info-box__disabled {
     display: flex;
@@ -695,6 +697,8 @@ body {
     }
     .galleryBox__section:hover {
         width: 100%;
+    }.active-menu .img-tag {
+        font-size: 1.5em;
     }
     .content {
         top: 10px;
