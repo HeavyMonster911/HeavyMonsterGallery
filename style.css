@@ -428,15 +428,15 @@ body {
 }
 .info-box {
     width: 100%;
-    height: 50px;
+    height: 100%;
     background: #000;
     z-index: 1;
     transition: 0.5s;
+    position: relative;
 }
 .active-menu {
     width: 100%;
     height: 100%;
-    position: absolute;
     background: #000;
     transition: 0.5s;
     color: #fff;
@@ -450,12 +450,10 @@ body {
     height: 100%;
 }
 .info-box__name {
-    display: flex;
-    justify-content: space-between;
     width: 100%;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    text-align: center;
-    margin: auto 0;
 }
 .info-box .info-box__name {
     align-items: center;
@@ -467,44 +465,31 @@ body {
 }
 .info-box .img-tag {
     color: #fff;
-    font-size: 1.5em;
+    font-size: 1em;
     padding: 0 40px;
     text-transform: none;
 }
 .active-menu .img-tag {
-    font-size: 3em;
+    font-size: 2em;
     padding: 10px;
     text-decoration: underline;
 }
 .info-box .info-arrow {
     color: #fff;
     font-size: 2em;
-    transform: rotate(0deg);
-    margin: 0 40px;
+    transform: rotate(180deg);
+    margin: 0 10px;
     cursor: pointer;
 }
 .info-box .arrow-active {
-    transform: rotate(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(0deg);
     font-size: 3em;
 }
 .info-box .categories {
     display: none;
-}
-.info-box .rating {
-    display: none;
-    transition: 0.5s;
-}
-.active-menu .rating {
-    z-index: 10000;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    position: relative;
-    flex-direction: row-reverse;
-    width: 100%;
-    transform: translateY(100%);
-    border-radius: 0;
-    transition: 0.5s;
 }
 .active-menu .categories {
     display: flex;
@@ -526,49 +511,6 @@ body {
     font-size: 0.5em;
     text-align: start;
 }
-.rating input {
-    position: relative;
-    width: 20px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    -webkit-appearance: none;
-    appearance: none;
-    border: none;
-    border-radius: 0;
-    overflow: hidden;
-    transform: translateY(55px);
-}
-.rating input::before {
-    content: '\f005';
-    position: absolute;
-    font-family: fontAwesome;
-    font-size: 35px;
-    position: absolute;
-    left: 4px;
-    color: #333;
-    transition: 0.5s;
-    -webkit-appearance: none;
-    appearance: none;
-    border: none;
-    border-radius: 0;
-}
-.rating input:nth-child(2n+1)::before {
-    right: 4px;
-    left: initial;
-    border-radius: 0;
-}
-.rating input:hover ~ input::before,
-.rating input:hover::before,
-.rating input:checked ~ input::before,
-.rating input:checked::before {
-    color: #fff;
-    border-radius: 0;
-}
-
-
 
 .content {
     position: relative;
